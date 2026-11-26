@@ -1,0 +1,27 @@
+---
+layout: default
+---
+{% assign t = site.data.i18n[page.lang] %}
+{% assign home = "/" %}
+{% if page.lang == "en" %}{% assign home = "/en/" %}{% endif %}
+
+<article class="project">
+  <a class="back" href="{{ home | relative_url }}#projects">{{ t.back }}</a>
+  <h1>{{ page.title }}</h1>
+  <p class="summary">{{ page.summary }}</p>
+
+  <dl class="meta">
+    {% if page.role %}<dt>{{ t.role }}</dt><dd>{{ page.role }}</dd>{% endif %}
+    {% if page.period %}<dt>{{ t.period }}</dt><dd>{{ page.period }}</dd>{% endif %}
+  </dl>
+
+  {% if page.tags %}
+  <ul class="tags">
+    {% for tag in page.tags %}<li>{{ tag }}</li>{% endfor %}
+  </ul>
+  {% endif %}
+
+  <div class="body">
+    {{ content }}
+  </div>
+</article>

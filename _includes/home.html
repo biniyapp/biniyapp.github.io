@@ -1,0 +1,67 @@
+{% comment %}
+  메인 페이지 본문 (한글/영문 공용)
+  page.lang 값에 따라 문구와 프로젝트 목록이 바뀜
+{% endcomment %}
+{% assign L = page.lang %}
+{% assign t = site.data.i18n[L] %}
+{% assign items = site.projects | where: "lang", L | sort: "order" %}
+
+<section class="hero">
+  <h1>{% if L == "en" and site.author.name_en != "" %}{{ site.author.name_en }}{% else %}{{ site.author.name_ko }}{% endif %}</h1>
+  <p class="tagline">{{ t.tagline }}</p>
+</section>
+
+<section id="about">
+  <h2>{{ t.about }}</h2>
+  <p>{{ t.about_body }}</p>
+</section>
+
+<section id="projects">
+  <h2>{{ t.projects }}</h2>
+  {% if items.size > 0 %}
+  <div class="cards">
+    {% for p in items %}
+    <a class="card" href="{{ p.url | relative_url }}">
+      <h3>{{ p.title }}</h3>
+      <p>{{ p.summary }}</p>
+      {% if p.tags %}
+      <ul class="tags">{% for tag in p.tags %}<li>{{ tag }}</li>{% endfor %}</ul>
+      {% endif %}
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p>{{ t.no_projects }}</p>
+  {% endif %}
+</section>
+
+<section id="history">
+  <h2>{{ t.history }}</h2>
+  <ul class="timeline">
+    {% for h in site.data.history %}
+    <li>
+      {% if h.period != "" %}<span class="when">{{ h.period }}</span>{% endif %}
+      <span>{% if L == "en" %}{{ h.en }}{% else %}{{ h.ko }}{% endif %}</span>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section id="skills">
+  <h2>{{ t.skills }}</h2>
+  {% for g in site.data.skills %}
+  <div class="skill-group">
+    <h3>{% if L == "en" %}{{ g.group_en }}{% else %}{{ g.group_ko }}{% endif %}</h3>
+    <ul class="tags">{% for i in g.items %}<li>{{ i }}</li>{% endfor %}</ul>
+  </div>
+  {% endfor %}
+</section>
+
+<section id="contact">
+  <h2>{{ t.contact }}</h2>
+  <ul class="links">
+    {% if site.author.github != "" %}<li><a href="https://github.com/{{ site.author.github }}">GitHub</a></li>{% endif %}
+    {% if site.author.blog != "" %}<li><a href="{{ site.author.blog }}">Blog</a></li>{% endif %}
+    {% if site.author.email != "" %}<li><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>{% endif %}
+  </ul>
+</section>

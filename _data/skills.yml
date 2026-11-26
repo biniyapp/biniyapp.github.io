@@ -1,0 +1,5 @@
+# 기술 스택 (실제로 써본 것만 남기기)
+# TODO: 카테고리/항목을 본인 기준으로 추가·수정
+- group_ko: "리버싱 / 분석 도구"
+  group_en: "Reverse Engineering / Tools"
+  items: ["IDA Pro", "x64dbg", "Frida"]

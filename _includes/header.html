@@ -1,0 +1,29 @@
+{% comment %}
+  상단 헤더: 홈 링크 + 언어 전환 버튼
+  - 일반 페이지: front matter 의 alt 값으로 이동
+  - 프로젝트 페이지: URL 의 /ko/ ↔ /en/ 를 치환해서 이동
+{% endcomment %}
+{% assign lang = page.lang | default: "ko" %}
+{% assign t = site.data.i18n[lang] %}
+{% assign home = "/" %}
+{% assign alt = page.alt %}
+{% if lang == "en" %}{% assign home = "/en/" %}{% endif %}
+{% if page.collection == "projects" %}
+  {% if lang == "ko" %}
+    {% assign alt = page.url | replace: "/ko/", "/en/" %}
+  {% else %}
+    {% assign alt = page.url | replace: "/en/", "/ko/" %}
+  {% endif %}
+{% endif %}
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="{{ home | relative_url }}">{{ site.author.name_ko }}</a>
+    <nav>
+      <a href="{{ home | relative_url }}#projects">{{ t.projects }}</a>
+      <a href="{{ home | relative_url }}#history">{{ t.history }}</a>
+      <a href="{{ home | relative_url }}#contact">{{ t.contact }}</a>
+      {% if alt %}<a class="lang" href="{{ alt | relative_url }}">{{ t.other_lang }}</a>{% endif %}
+    </nav>
+  </div>
+</header>
