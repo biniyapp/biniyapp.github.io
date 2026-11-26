@@ -37,9 +37,33 @@
 
 <section id="projects">
   <h2>{{ t.projects }}</h2>
+  {% assign teams = items | where: "type", "team" %}
+  {% assign personal = items | where_exp: "p", "p.type != 'team'" %}
+
+  {% comment %} 팀 프로젝트: 개인 프로젝트보다 위에 크게 표시 {% endcomment %}
+  {% if teams.size > 0 %}
+  <h3 class="grp">{{ t.team }}</h3>
+  <div class="cards">
+    {% for p in teams %}
+    <a class="card card-team" href="{{ p.url | relative_url }}">
+      <h3>{{ p.title }}</h3>
+      <p>{{ p.summary }}</p>
+      <ul class="badges">
+        <li>{{ t.team_size }}: {{ p.team_size }}</li>
+        <li>{{ t.role }}: {{ p.role }}</li>
+      </ul>
+      {% if p.tags %}
+      <ul class="tags">{% for tag in p.tags %}<li>{{ tag }}</li>{% endfor %}</ul>
+      {% endif %}
+    </a>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if personal.size > 0 %}<h3 class="grp">{{ t.personal }}</h3>{% endif %}
   {% if items.size > 0 %}
   {% for c in site.data.categories %}
-    {% assign group = items | where: "cat", c %}
+    {% assign group = personal | where: "cat", c %}
     {% if group.size > 0 %}
     <h3 class="cat">{{ t.cats[c] }}</h3>
     <div class="cards">

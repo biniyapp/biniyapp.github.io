@@ -41,6 +41,14 @@ h3 { font-size: 1.05rem; margin: 0 0 6px; }
 .tagline { color: var(--muted); font-size: 1.1rem; margin: 0; }
 @media (max-width: 520px) { .hero { flex-direction: column; align-items: flex-start; } }
 
+/* 팀 / 개인 프로젝트 그룹 제목, 팀 프로젝트 카드 강조 */
+.grp { font-size: 1.15rem; margin: 28px 0 10px; padding-bottom: 6px; border-bottom: 2px solid var(--fg); }
+.card-team { border-width: 3px; padding: 20px; }
+.card-team h3 { font-size: 1.2rem; }
+.badges { list-style: none; padding: 0; margin: 0 0 10px; display: flex; flex-wrap: wrap; gap: 6px; }
+.badges li { font-family: var(--mono); font-size: 0.8rem; background: var(--fg); color: var(--bg); padding: 1px 8px; }
+.card-team:hover .badges li { background: var(--bg); color: var(--fg); }
+
 /* 프로젝트 카테고리 제목 */
 .cat { font-family: var(--mono); font-size: 0.95rem; color: var(--muted); margin: 20px 0 8px; }
 

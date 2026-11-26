@@ -11,6 +11,7 @@ layout: default
   <p class="summary">{{ page.summary }}</p>
 
   <dl class="meta">
+    {% if page.team_size %}<dt>{{ t.team_size }}</dt><dd>{{ page.team_size }}</dd>{% endif %}
     {% if page.role %}<dt>{{ t.role }}</dt><dd>{{ page.role }}</dd>{% endif %}
     {% if page.period %}<dt>{{ t.period }}</dt><dd>{{ page.period }}</dd>{% endif %}
   </dl>
