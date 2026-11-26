@@ -6,14 +6,33 @@
 {% assign t = site.data.i18n[L] %}
 {% assign items = site.projects | where: "lang", L | sort: "order" %}
 
+{% comment %} 프로필 사진: assets/img/profile.jpg 가 있으면 표시, 없으면 빈 자리 표시 {% endcomment %}
+{% assign photo = site.static_files | where: "path", "/assets/img/profile.jpg" | first %}
+
 <section class="hero">
-  <h1>{% if L == "en" and site.author.name_en != "" %}{{ site.author.name_en }}{% else %}{{ site.author.name_ko }}{% endif %}</h1>
-  <p class="tagline">{{ t.tagline }}</p>
+  <div class="hero-photo">
+    {% if photo %}
+    <img src="{{ '/assets/img/profile.jpg' | relative_url }}" alt="{{ t.photo_alt }}">
+    {% else %}
+    <div class="photo-empty">PHOTO</div>
+    {% endif %}
+  </div>
+  <div class="hero-text">
+    <h1>{% if L == "en" and site.author.name_en != "" %}{{ site.author.name_en }}{% else %}{{ site.author.name_ko }}{% endif %}</h1>
+    <p class="tagline">{{ t.tagline }}</p>
+  </div>
 </section>
 
 <section id="about">
   <h2>{{ t.about }}</h2>
   <p>{{ t.about_body }}</p>
+</section>
+
+<section id="interests">
+  <h2>{{ t.interests }}</h2>
+  <ul class="tags">
+    {% for i in site.data.interests %}<li>{% if L == "en" %}{{ i.en }}{% else %}{{ i.ko }}{% endif %}</li>{% endfor %}
+  </ul>
 </section>
 
 <section id="projects">
@@ -55,6 +74,18 @@
     <ul class="tags">{% for i in g.items %}<li>{{ i }}</li>{% endfor %}</ul>
   </div>
   {% endfor %}
+</section>
+
+<section id="awards">
+  <h2>{{ t.awards }}</h2>
+  <ul class="timeline">
+    {% for a in site.data.awards %}
+    <li>
+      {% if a.period != "" %}<span class="when">{{ a.period }}</span>{% endif %}
+      <span>{% if L == "en" %}{{ a.en }}{% else %}{{ a.ko }}{% endif %}</span>
+    </li>
+    {% endfor %}
+  </ul>
 </section>
 
 <section id="contact">

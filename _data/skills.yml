@@ -3,3 +3,7 @@
 - group_ko: "리버싱 / 분석 도구"
   group_en: "Reverse Engineering / Tools"
   items: ["IDA Pro", "x64dbg", "Frida"]
+# TODO: 아래 그룹을 실제 사용한 것만 골라 추가 (예시)
+# - group_ko: "언어"
+#   group_en: "Languages"
+#   items: ["C", "Python"]
