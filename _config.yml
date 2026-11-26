@@ -1,15 +1,15 @@
 # 사이트 기본 설정
-title: "호서빈 | Portfolio"
+title: "biniyapp | Portfolio"
 url: "https://biniyapp.github.io"
 baseurl: ""
 
 # 개인 정보 (비워두면 화면에 표시되지 않음)
 author:
   name_ko: "호서빈"
-  name_en: ""            # TODO: 영문 이름 표기 입력
+  name_en: "Hoseobin"            # TODO: 영문 이름 표기 입력
   github: "biniyapp"
-  email: ""              # TODO: 공개할 이메일 (없으면 비워두기)
-  blog: ""               # TODO: 티스토리 블로그 주소
+  email: "ghtjqls1@gmail.com"              # TODO: 공개할 이메일 (없으면 비워두기)
+  blog: "https://biniyap.tistory.com/"               # TODO: 티스토리 블로그 주소
 
 # 프로젝트 컬렉션 (_projects/ko, _projects/en 하위 .md 가 각각 페이지가 됨)
 collections:
