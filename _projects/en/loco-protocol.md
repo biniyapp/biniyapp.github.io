@@ -4,7 +4,8 @@ summary: "Analyzed the send/receive structure of KakaoTalk's LOCO protocol with 
 role: "TODO: your role"
 period: "TODO: period"
 tags: ["Reverse Engineering", "Frida", "IDA Pro"]
-order: 2
+cat: re
+order: 6
 ---
 
 ## Overview

@@ -4,7 +4,8 @@ summary: "Frida와 IDA로 카카오톡 LOCO 프로토콜의 송수신 구조를 
 role: "TODO: 본인이 맡은 역할"
 period: "TODO: 진행 기간"
 tags: ["리버싱", "Frida", "IDA Pro"]
-order: 2
+cat: re
+order: 6
 ---
 
 ## 개요

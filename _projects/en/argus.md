@@ -4,7 +4,8 @@ summary: "White Hat School team project detecting malicious npm packages with AI
 role: "TODO: your role"
 period: "TODO: period"
 tags: ["npm", "Supply Chain Security", "Malware Detection"]
-order: 1
+cat: malware
+order: 4
 ---
 
 ## Overview

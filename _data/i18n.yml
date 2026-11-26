@@ -1,6 +1,11 @@
 # 화면에 표시되는 문구 모음 (언어별)
 ko:
-  tagline: "리버싱 기반 DFIR·악성코드 분석을 지향하는 사이버보안 전공 학생"
+  tagline: "리버싱 기반 악성코드 분석과 침해사고 대응(DFIR)을 지향하는 사이버보안 전공 학생"
+  cats:
+    dfir: "침해사고 분석 (DFIR)"
+    malware: "악성코드 분석·탐지"
+    tools: "도구·자동화"
+    re: "리버싱"
   about: "About me"
   about_body: "아주대학교 사이버보안학과 3학년. 리버싱을 중심으로 웹 보안·포너블을 거쳐 DFIR과 악성코드 분석으로 관심을 넓히고 있습니다. TODO: 본인 소개 문장 추가"
   interests: "관심 분야"
@@ -16,7 +21,12 @@ ko:
   other_lang: "English"
   no_projects: "준비 중입니다."
 en:
-  tagline: "Cybersecurity student aiming at DFIR and malware analysis, built on reverse engineering"
+  tagline: "Cybersecurity student aiming at malware analysis and incident response (DFIR), built on reverse engineering"
+  cats:
+    dfir: "Incident Analysis (DFIR)"
+    malware: "Malware Analysis & Detection"
+    tools: "Tools & Automation"
+    re: "Reverse Engineering"
   about: "About me"
   about_body: "Junior majoring in Cyber Security at Ajou University. Starting from reverse engineering, with a background in web security and pwnable, now expanding into DFIR and malware analysis. TODO: add your own intro"
   interests: "Interests"

@@ -4,7 +4,8 @@ summary: "npm 패키지의 악성 행위를 AI로 탐지하는 화이트햇스�
 role: "TODO: 본인이 맡은 역할"
 period: "TODO: 진행 기간"
 tags: ["npm", "공급망 보안", "악성코드 탐지"]
-order: 1
+cat: malware
+order: 4
 ---
 
 ## 개요
